@@ -1,21 +1,26 @@
 # DemoStreamData
 
-**TODO: Add description**
+**A simple demo of Property-based Testing with StreamData**
 
-## Installation
+## StreamData
+Functions to create and combine generators. Used for property based testing
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `demo_stream_data` to your list of dependencies in `mix.exs`:
+## ExUnitProperties
+Provides macros for property-based testing.
 
+Quick setup, add Quixir to deps in mix.exs, install with mix.
 ```elixir
-def deps do
-  [
-    {:demo_stream_data, "~> 0.1.0"}
-  ]
-end
+  defp deps do
+    [
+      {:stream_data, "~> 0.5", only: :test}
+    ]
+  end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/demo_stream_data](https://hexdocs.pm/demo_stream_data).
+```sh
+sh> mix deps.get
+```
 
+See [StreamData docs](https://hexdocs.pm/stream_data/StreamData.html)
+
+See [Overview of property based testing](https://hexdocs.pm/stream_data/ExUnitProperties.html#content)
