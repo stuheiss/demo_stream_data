@@ -36,11 +36,12 @@ defmodule Diamond do
     idx = ord(cur) - ?A
     case cur do
       "A" ->
-        # "A" is uniquly formatted compared to all other letters
+        # "A" is formatted "<outer_pad>A<outer_pad>"
         outer = div(size - 1, 2)
         outer_pad = String.duplicate(" ", outer)
         outer_pad <> "A" <> outer_pad
       _ ->
+        # "X" is formatted "<outer_pad>X<inner_pad>X<outer_pad>"
         inner = ((idx - 1) * 2) + 1
         outer = div(size - 1, 2) - idx
         outer_pad = String.duplicate(" ", outer)
