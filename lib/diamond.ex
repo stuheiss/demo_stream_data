@@ -24,11 +24,10 @@ defmodule Diamond do
   end
 
   defp do_make(cur, idx, size, acc) do
-    case cur do
-      "@" ->
-        # less than "A"
+    cond do
+      ord(cur) < ?A ->
         acc ++ (Enum.reverse(acc) |> tl)
-      _ ->
+      true ->
         do_make(chr(ord(cur) - 1), idx, size, [row_format(cur, size) | acc])
     end
   end
